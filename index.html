@@ -1,16 +1,83 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raftaar - Official App Download</title>
-    <!-- Tailwind CSS for premium and responsive designing -->
+    <title>Balaji MTK - App Download</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Inter Font for premium look -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons for nice assets -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
     
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        darkBg: '#050505',
+                        cardBg: '#111111',
+                        cardBorder: '#222222',
+                        brandYellow: '#e5ff00',
+                        textMuted: '#9ca3af',
+                    },
+                    boxShadow: {
+                        'glow-yellow': '0 0 30px rgba(229, 255, 0, 0.3)',
+                        'logo-glow': '0 0 25px rgba(229, 255, 0, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #050505;
+            color: white;
+            overflow-x: hidden;
+        }
+        /* Custom Background Glows - Fixed with viewport bounds */
+        .bg-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(229,255,0,0.15) 0%, rgba(5,5,5,0) 70%);
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .bg-glow-purple {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(5,5,5,0) 70%);
+            bottom: -300px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        /* Image Logo Style */
+        .logo-image {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 3px solid #e5ff00;
+            object-fit: cover;
+            background: #000;
+            box-shadow: 0 0 30px rgba(229, 255, 0, 0.45);
+            transition: transform 0.3s ease;
+        }
+        .logo-image:hover {
+            transform: scale(1.05);
+        }
+    </style>
+
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -21,439 +88,114 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1516554696632290');
+    fbq('init', '1522698552882369');
     fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1516554696632290&ev=PageView&noscript=1"
+    src="https://www.facebook.com/tr?id=1522698552882369&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
 
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            user-select: none; /* Prevents text selection on mobile */
-        }
-        /* Custom styles for premium smooth gradients */
-        .gradient-bg {
-            background: radial-gradient(circle at top, #1e3a8a 0%, #0f172a 100%);
-        }
-        /* Anti-Bot Honeypot (Do not display to humans) */
-        .hidden-honeypot {
-            opacity: 0;
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 0;
-            width: 0;
-            z-index: -1;
-        }
-        /* Soft pulsing glow for countdown colons */
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.2; }
-        }
-        .colon-blink {
-            animation: blink 1s infinite;
-        }
-    </style>
 </head>
-<body class="gradient-bg min-h-screen text-white flex flex-col items-center justify-between p-4 md:p-8">
+<body class="antialiased min-h-screen bg-darkBg relative font-sans">
+    
+    <!-- Wrapper to strictly clip extra bottom spaces caused by gradients -->
+    <div class="relative min-h-screen overflow-hidden w-full flex flex-col items-center justify-center py-10">
+        
+        <!-- Ambient Background Glows inside container -->
+        <div class="bg-glow"></div>
+        <div class="bg-glow-purple"></div>
 
-    <!-- IN-APP BROWSER DETECT OVERLAY (Bahut zaroori hai ads ke liye!) -->
-    <div id="inAppModal" class="hidden fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-6 text-center">
-        <div class="bg-slate-900 border border-blue-500/30 rounded-2xl p-6 max-w-md w-full shadow-2xl">
-            <div class="w-16 h-16 bg-amber-500/10 border border-amber-500/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i class="fa-solid fa-triangle-exclamation text-amber-500 text-2xl"></i>
+        <div class="max-w-4xl w-full mx-auto px-4 flex flex-col items-center relative z-10">
+            
+            <!-- Logo Section with Premium Golden 'B' Logo -->
+            <div class="mb-6 flex justify-center">
+                <img src="watermarked_img_1819214572267359626.png" alt="Balaji MTK Logo" class="logo-image" onerror="this.src='https://placehold.co/140x140/000000/e5ff00?text=Balaji'">
             </div>
-            <h3 class="text-xl font-bold text-white mb-2">Browser Switch Karein!</h3>
-            <p class="text-slate-300 text-sm mb-6 leading-relaxed">
-                Aap is waqt Meta/Instagram ke internal browser me hain, jahan secure downloads block ho jaate hain. Sahi download ke liye niche steps follow karein:
+
+            <!-- Main Heading -->
+            <h1 class="text-4xl md:text-5xl font-extrabold text-center tracking-tight mb-1">
+                BALAJI <br class="md:hidden">
+                <span class="text-brandYellow">MTK</span>
+            </h1>
+            <p class="text-textMuted text-xs md:text-sm tracking-[0.3em] uppercase font-semibold mb-8 text-center">
+                India's No.1 Matka App
             </p>
-            <div class="bg-slate-800/80 rounded-xl p-4 text-left space-y-3 mb-6 border border-slate-700/50">
-                <div class="flex items-start gap-3 text-sm">
-                    <span class="w-6 h-6 rounded-full bg-blue-600 text-xs flex items-center justify-center font-bold shrink-0 mt-0.5">1</span>
-                    <p class="text-slate-200">Upar top-right corner me <i class="fa-solid fa-ellipsis-vertical mx-1 text-slate-400"></i> (3 dots) par click karein.</p>
+
+            <!-- 🔴 APK DOWNLOAD BUTTON 🔴 -->
+            <a href="https://balajigame.shop/app/BalajiMatka.apk" download class="w-full max-w-md bg-gradient-to-r from-[#f0ff44] to-[#ccff00] text-black font-extrabold py-4 px-8 rounded-xl text-lg hover:scale-105 transition-transform duration-300 shadow-glow-yellow mb-4 uppercase tracking-wide text-center flex justify-center items-center gap-3">
+                <i class="fa-solid fa-download text-xl"></i> DOWNLOAD APK
+            </a>
+            
+            <p class="text-gray-400 text-sm mb-6 text-center">Trusted by 100K+ Active Users</p>
+
+            <!-- Countdown Timer -->
+            <div class="bg-black/50 border border-white/5 rounded-full px-6 py-2 mb-10 flex items-center gap-2 backdrop-blur-sm">
+                <span class="text-gray-400 text-sm font-semibold tracking-wider">ENDS IN:</span>
+                <span class="text-red-500 font-bold text-sm tracking-widest" id="countdown">14:59</span>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-3 gap-3 md:gap-6 w-full max-w-2xl mb-8">
+                <!-- Card 1 -->
+                <div class="bg-cardBg border border-cardBorder rounded-2xl p-4 md:p-6 flex flex-col items-center justify-center text-center transition-colors hover:border-brandYellow/50">
+                    <i class="fa-solid fa-check text-brandYellow text-xl md:text-2xl mb-2"></i>
+                    <h3 class="text-white font-bold text-lg md:text-xl">100%</h3>
+                    <p class="text-gray-500 text-[10px] md:text-xs font-semibold uppercase tracking-wider">Accuracy</p>
                 </div>
-                <div class="flex items-start gap-3 text-sm">
-                    <span class="w-6 h-6 rounded-full bg-blue-600 text-xs flex items-center justify-center font-bold shrink-0 mt-0.5">2</span>
-                    <p class="text-slate-200"><strong>"Open in Chrome"</strong> ya <strong>"Open in Browser"</strong> select karein.</p>
+                <!-- Card 2 -->
+                <div class="bg-cardBg border border-cardBorder rounded-2xl p-4 md:p-6 flex flex-col items-center justify-center text-center transition-colors hover:border-brandYellow/50">
+                    <i class="fa-regular fa-star text-brandYellow text-xl md:text-2xl mb-2"></i>
+                    <h3 class="text-white font-bold text-lg md:text-xl">100K+</h3>
+                    <p class="text-gray-500 text-[10px] md:text-xs font-semibold uppercase tracking-wider">Members</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-cardBg border border-cardBorder rounded-2xl p-4 md:p-6 flex flex-col items-center justify-center text-center transition-colors hover:border-brandYellow/50">
+                    <i class="fa-solid fa-gem text-brandYellow text-xl md:text-2xl mb-2"></i>
+                    <h3 class="text-white font-bold text-lg md:text-xl">24/7</h3>
+                    <p class="text-gray-500 text-[10px] md:text-xs font-semibold uppercase tracking-wider">Support</p>
                 </div>
             </div>
-            <div class="animate-bounce inline-block text-blue-400 text-sm font-semibold">
-                <i class="fa-solid fa-arrow-up mr-1"></i> Upar Right Side Se Choose Karein <i class="fa-solid fa-arrow-up ml-1"></i>
+
+            <!-- Trust Badges -->
+            <div class="flex items-center justify-center gap-4 md:gap-8 text-sm text-gray-400">
+                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brandYellow"></i> Verified</div>
+                <span class="text-gray-700">•</span>
+                <div>Secure</div>
+                <span class="text-gray-700">•</span>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-bolt text-brandYellow"></i> Instant</div>
             </div>
+
         </div>
     </div>
 
-    <!-- BOT HONEYPOT FIELD (Human isko fill nahi karenge, par automated scrapers/bots kar denge) -->
-    <div class="hidden-honeypot">
-        <input type="text" id="bot_fullname" value="">
-        <input type="email" id="bot_email" value="">
-    </div>
-
-    <!-- MAIN HEADER SECTION -->
-    <header class="w-full max-w-lg text-center flex flex-col items-center mt-6">
-        <!-- Brand Logo Container -->
-        <div class="relative w-36 h-36 md:w-40 md:h-40 rounded-full bg-gradient-to-tr from-sky-400 to-blue-600 flex items-center justify-center shadow-lg shadow-blue-500/20 border-4 border-white/10 overflow-hidden mb-6">
-            <!-- Sleek abstract circles in logo background -->
-            <div class="absolute inset-0 border border-white/5 rounded-full scale-90 animate-pulse"></div>
-            <div class="absolute inset-2 border border-white/5 rounded-full scale-75"></div>
-            <!-- Dynamic 1R Brand Logo Text -->
-            <div class="text-center z-10">
-                <span class="block text-5xl md:text-6xl font-extrabold tracking-tighter text-white drop-shadow">1R</span>
-                <span class="block text-xs font-semibold tracking-[0.3em] uppercase text-sky-200 mt-1">Raftaar</span>
-            </div>
-        </div>
-        
-        <!-- App Title and Slogan -->
-        <h1 class="text-2xl md:text-3xl font-extrabold tracking-wide uppercase text-white drop-shadow">Raftaar</h1>
-        <p class="text-xs font-medium text-sky-400 tracking-widest uppercase mt-1">Speed, Accuracy & Trust</p>
-    </header>
-
-    <!-- INTERACTIVE DOWNLOADING INTERFACE -->
-    <main class="w-full max-w-md bg-slate-900/40 backdrop-blur-md rounded-3xl p-6 border border-slate-800 my-8 shadow-xl relative overflow-hidden">
-        
-        <!-- DYNAMIC AND ALIGNED COUNTDOWN TIMER -->
-        <div class="mb-8 select-none">
-            <div class="flex justify-center items-start gap-3 sm:gap-4 text-center">
-                <!-- Days Element -->
-                <div class="flex flex-col items-center min-w-[56px]">
-                    <span id="days" class="text-3xl sm:text-4xl font-extrabold text-rose-500 font-mono tracking-tight drop-shadow-[0_2px_10px_rgba(244,63,94,0.3)]">00</span>
-                    <span class="text-[9px] font-extrabold text-rose-400/80 uppercase tracking-widest mt-1">Days</span>
-                </div>
-                
-                <!-- Colon Divider -->
-                <div class="text-rose-500/70 text-2xl sm:text-3xl font-bold pt-1 colon-blink">:</div>
-                
-                <!-- Hours Element -->
-                <div class="flex flex-col items-center min-w-[56px]">
-                    <span id="hours" class="text-3xl sm:text-4xl font-extrabold text-rose-500 font-mono tracking-tight drop-shadow-[0_2px_10px_rgba(244,63,94,0.3)]">00</span>
-                    <span class="text-[9px] font-extrabold text-rose-400/80 uppercase tracking-widest mt-1">Hours</span>
-                </div>
-                
-                <!-- Colon Divider -->
-                <div class="text-rose-500/70 text-2xl sm:text-3xl font-bold pt-1 colon-blink">:</div>
-                
-                <!-- Minutes Element -->
-                <div class="flex flex-col items-center min-w-[56px]">
-                    <span id="minutes" class="text-3xl sm:text-4xl font-extrabold text-rose-500 font-mono tracking-tight drop-shadow-[0_2px_10px_rgba(244,63,94,0.4)] animate-pulse">04</span>
-                    <span class="text-[9px] font-extrabold text-rose-400/80 uppercase tracking-widest mt-1">Minutes</span>
-                </div>
-                
-                <!-- Colon Divider -->
-                <div class="text-rose-500/70 text-2xl sm:text-3xl font-bold pt-1 colon-blink">:</div>
-                
-                <!-- Seconds Element -->
-                <div class="flex flex-col items-center min-w-[56px]">
-                    <span id="seconds" class="text-3xl sm:text-4xl font-extrabold text-rose-500 font-mono tracking-tight drop-shadow-[0_2px_10px_rgba(244,63,94,0.3)]">00</span>
-                    <span class="text-[9px] font-extrabold text-rose-400/80 uppercase tracking-widest mt-1">Seconds</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- 2. HIGH ACCURACY HUMAN INTERACTIVE SLIDER (Bots cannot bypass this!) -->
-        <div id="unlockContainer" class="bg-slate-950 border border-slate-800 rounded-full p-1.5 flex items-center justify-between relative overflow-hidden h-16 w-full select-none cursor-grab">
-            <!-- Progress Fill bar behind handle -->
-            <div id="sliderFill" class="absolute left-0 top-0 bottom-0 bg-gradient-to-r from-sky-500 to-blue-600 rounded-l-full w-0 transition-all pointer-events-none duration-75"></div>
-            
-            <!-- Sliding Track text guide -->
-            <div id="sliderLabel" class="absolute inset-0 flex items-center justify-center text-xs font-bold uppercase tracking-widest text-slate-400 pointer-events-none transition-opacity duration-300">
-                <i class="fa-solid fa-angles-right animate-pulse mr-2 text-sky-400"></i> Swipe right to Download
-            </div>
-            
-            <!-- Movable Touch Handle -->
-            <div id="sliderHandle" class="w-14 h-13 flex items-center justify-center bg-blue-600 hover:bg-blue-500 text-white rounded-full transition-shadow duration-150 shadow-lg shadow-blue-500/30 z-10 h-full relative cursor-grab select-none">
-                <i class="fa-solid fa-arrow-right text-lg"></i>
-            </div>
-        </div>
-
-        <!-- Hidden Genuine Download Trigger Panel (Appears after slide validation) -->
-        <div id="downloadTriggerPanel" class="hidden text-center space-y-4">
-            <div class="animate-pulse py-2 px-4 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold rounded-full inline-block">
-                <i class="fa-solid fa-shield-halved mr-1.5"></i> Verification Passed Successfully
-            </div>
-            
-            <button id="directDownloadBtn" onclick="triggerActualDownload()" class="w-full bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-700 hover:to-sky-600 text-white text-md font-extrabold tracking-wider py-4 rounded-2xl shadow-xl shadow-blue-600/30 flex items-center justify-center gap-3 active:scale-95 transition-transform duration-100 uppercase italic">
-                <i class="fa-solid fa-cloud-arrow-down text-xl"></i>
-                Download APK Now
-            </button>
-            
-            <p class="text-[11px] text-slate-400">File Size: <span class="font-bold text-slate-300">14.8 MB</span> | Safe and scanned by Play Protect</p>
-        </div>
-
-    </main>
-
-    <!-- TRUST-BUILDING VISUAL INSTALLATION GUIDE -->
-    <section class="w-full max-w-md bg-slate-900/20 rounded-2xl p-5 border border-slate-800/50 mb-6">
-        <h4 class="text-xs font-bold text-slate-400 tracking-widest uppercase text-center mb-4">Easy Installation Steps</h4>
-        
-        <div class="grid grid-cols-3 gap-3 text-center">
-            <!-- Step 1 -->
-            <div class="space-y-2">
-                <div class="w-10 h-10 rounded-full bg-slate-800/80 text-blue-400 flex items-center justify-center font-bold text-sm mx-auto border border-slate-700/50">1</div>
-                <h5 class="text-[11px] font-bold text-white">Download</h5>
-                <p class="text-[9px] text-slate-400 leading-normal">"Download Anyway" warning par confirm karein.</p>
-            </div>
-            <!-- Step 2 -->
-            <div class="space-y-2">
-                <div class="w-10 h-10 rounded-full bg-slate-800/80 text-blue-400 flex items-center justify-center font-bold text-sm mx-auto border border-slate-700/50">2</div>
-                <h5 class="text-[11px] font-bold text-white">Enable</h5>
-                <p class="text-[9px] text-slate-400 leading-normal">Settings me jake 'Allow Unknown Sources' on karein.</p>
-            </div>
-            <!-- Step 3 -->
-            <div class="space-y-2">
-                <div class="w-10 h-10 rounded-full bg-slate-800/80 text-blue-400 flex items-center justify-center font-bold text-sm mx-auto border border-slate-700/50">3</div>
-                <h5 class="text-[11px] font-bold text-white">Install</h5>
-                <p class="text-[9px] text-slate-400 leading-normal">Install button par tap karke instant launch karein!</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- TRUST LOGOS & FOOTER -->
-    <footer class="w-full text-center space-y-3 pb-4">
-        <div class="flex justify-center items-center gap-6 text-slate-400 text-xs">
-            <span><i class="fa-solid fa-lock text-sky-500 mr-1.5"></i> SSL Secure</span>
-            <span><i class="fa-solid fa-shield-virus text-sky-500 mr-1.5"></i> Virus Free</span>
-            <span><i class="fa-solid fa-certificate text-sky-500 mr-1.5"></i> Verified APK</span>
-        </div>
-        <p class="text-[10px] text-slate-500">&copy; 2026 Raftaart Official. All Rights Reserved.</p>
-    </footer>
-
-    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <!-- Countdown Script -->
     <script>
-        // APK direct download link updated with your CloudFront URL
-        const REAL_APK_URL = "https://d1yei2z3i6k35z.cloudfront.net/18189850/6a3faeb90f0ef1.07763375_raftaar.apk";
+        // Set an initial time of 15 minutes
+        let timeInSeconds = 15 * 60; 
+        const countdownEl = document.getElementById('countdown');
 
-        // PAGE INITIAL LOAD TIMING
-        let pageLoadTime = Date.now();
-        let isHumanVerified = false;
-        let trackingFired = false; // ULTIMATE LOCK: Isse swipe 'Lead' tracking event block rahega duplicate clicks ke liye
-        let downloadFired = false; // NEW BULLETPROOF LOCK: Isse download click event dynamic flow lock hoga
+        function updateCountdown() {
+            const minutes = Math.floor(timeInSeconds / 60);
+            let seconds = timeInSeconds % 60;
 
-        // IN-APP BROWSER DETECTOR SCRIPT
-        window.onload = function() {
-            detectAndHandleInAppBrowser();
-            startCountdown();
-            initInteractiveSlider();
-        };
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            let displayMinutes = minutes < 10 ? '0' + minutes : minutes;
 
-        // Detect if opened inside Instagram, Facebook, Telegram etc.
-        function detectAndHandleInAppBrowser() {
-            const ua = navigator.userAgent || navigator.vendor || window.opera;
-            const isInApp = (ua.indexOf("FBAN") > -1) || 
-                            (ua.indexOf("FBAV") > -1) || 
-                            (ua.indexOf("Instagram") > -1) || 
-                            (ua.indexOf("Telegram") > -1) || 
-                            (ua.indexOf("Messenger") > -1);
+            if(countdownEl) {
+                countdownEl.innerHTML = `${displayMinutes}:${seconds}`;
+            }
 
-            if (isInApp) {
-                document.getElementById('inAppModal').classList.remove('hidden');
+            if (timeInSeconds > 0) {
+                timeInSeconds--;
+            } else {
+                // Reset or keep at 00:00
+                timeInSeconds = 0; 
             }
         }
 
-        // COUNTDOWN TIMER REALTIME ENGINE (Exactly 4 Minutes)
-        function startCountdown() {
-            // Setup target countdown to exactly 4 minutes (4 * 60 seconds)
-            let countdownSeconds = 4 * 60; 
-            
-            const timerInterval = setInterval(() => {
-                if (countdownSeconds <= 0) {
-                    clearInterval(timerInterval);
-                    return;
-                }
-                
-                countdownSeconds--;
-
-                const d = Math.floor(countdownSeconds / (24 * 3600));
-                const h = Math.floor((countdownSeconds % (24 * 3600)) / 3600);
-                const m = Math.floor((countdownSeconds % 3600) / 60);
-                const s = countdownSeconds % 60;
-
-                // Format values with leading zeroes
-                document.getElementById('days').innerText = String(d).padStart(2, '0');
-                document.getElementById('hours').innerText = String(h).padStart(2, '0');
-                document.getElementById('minutes').innerText = String(m).padStart(2, '0');
-                document.getElementById('seconds').innerText = String(s).padStart(2, '0');
-            }, 1000);
-        }
-
-        // SLIDER UNLOCK LOGIC - BOTS SE SURAKSHA
-        function initInteractiveSlider() {
-            const handle = document.getElementById('sliderHandle');
-            const track = document.getElementById('unlockContainer');
-            const label = document.getElementById('sliderLabel');
-            const fill = document.getElementById('sliderFill');
-            
-            let isDragging = false;
-            let startX = 0;
-            let maxSlide = 0;
-
-            // Calculations based on sizes
-            function updateMaxSlide() {
-                maxSlide = track.clientWidth - handle.clientWidth - 12; // Adjusted padding
-            }
-
-            // Detect touch and mouse start
-            const startDrag = (e) => {
-                // Time Delay Guard: Fast bot check
-                const timeElapsed = Date.now() - pageLoadTime;
-                if (timeElapsed < 1200) {
-                    // Page load ke 1.2 second tak action register nahi hogi, bots stop hone ke liye
-                    return; 
-                }
-
-                // Honeypot check: If bot filled the invisible field, fail instantly
-                if (document.getElementById('bot_fullname').value !== "" || document.getElementById('bot_email').value !== "") {
-                    console.log("Bot activity flagged!");
-                    return;
-                }
-
-                isDragging = true;
-                updateMaxSlide();
-                startX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
-                handle.style.transition = 'none';
-                fill.style.transition = 'none';
-            };
-
-            const drag = (e) => {
-                if (!isDragging) return;
-                
-                const clientX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
-                let moveX = clientX - startX;
-
-                if (moveX < 0) moveX = 0;
-                if (moveX > maxSlide) moveX = maxSlide;
-
-                // Move visual elements in real time
-                handle.style.transform = `translateX(${moveX}px)`;
-                fill.style.width = `${moveX + handle.clientWidth/2}px`;
-                
-                // Dim text as we slide
-                label.style.opacity = 1 - (moveX / maxSlide);
-            };
-
-            const stopDrag = () => {
-                if (!isDragging) return;
-                isDragging = false;
-                
-                updateMaxSlide();
-                const transformMatrix = window.getComputedStyle(handle).transform;
-                let currentX = 0;
-                
-                if (transformMatrix !== 'none') {
-                    const values = transformMatrix.split('(')[1].split(')')[0].split(',');
-                    currentX = parseFloat(values[4]) || 0;
-                }
-
-                // Check if user swiped at least 90% of the track
-                if (currentX >= maxSlide * 0.9) {
-                    // Success! Switch screen views
-                    triggerSuccessUnlock();
-                } else {
-                    // Fail! Slide handle back automatically
-                    handle.style.transition = 'transform 0.3s ease-out';
-                    fill.style.transition = 'width 0.3s ease-out';
-                    handle.style.transform = 'translateX(0px)';
-                    fill.style.width = '0px';
-                    label.style.opacity = '1';
-                }
-            };
-
-            // Event Listeners for Touch Screen devices
-            handle.addEventListener('touchstart', startDrag, { passive: true });
-            window.addEventListener('touchmove', drag, { passive: false });
-            window.addEventListener('touchend', stopDrag);
-
-            // Event Listeners for Desktop devices
-            handle.addEventListener('mousedown', startDrag);
-            window.addEventListener('mousemove', drag);
-            window.addEventListener('mouseup', stopDrag);
-            
-            // Resize adjustment helper
-            window.addEventListener('resize', () => {
-                handle.style.transform = 'translateX(0px)';
-                fill.style.width = '0px';
-                label.style.opacity = '1';
-            });
-        }
-
-        // TRIGGER ON SUCCESSFUL SWIPE (LEAD EVENT)
-        function triggerSuccessUnlock() {
-            isHumanVerified = true;
-            
-            // Hide sliding bar interface and display premium verified direct download
-            document.getElementById('unlockContainer').classList.add('hidden');
-            document.getElementById('downloadTriggerPanel').classList.remove('hidden');
-
-            // --- ACCURATE CLICK TRACKING WITH DOUBLE-COUNT GUARD ---
-            if (trackingFired) return;
-            trackingFired = true; // Lock the tracking forever for this page session
-            
-            console.log("Human verified! Lead Event fired exactly once.");
-            
-            // Meta (Facebook) Pixel Lead Event
-            if (typeof fbq !== 'undefined') {
-                fbq('track', 'Lead', { content_name: 'Verified App Download' });
-            }
-            
-            // Google Analytics Lead Event
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'download_click_verified', {
-                    'event_category': 'APK_Acquisition',
-                    'event_label': 'Raftaar App'
-                });
-            }
-            // --- ACCURATE CLICK TRACKING END ---
-        }
-
-        // PHYSICAL ACTION OF DOWNLOAD WITH MULTI-CLICK GUARD & SUBSCRIBE EVENT
-        function triggerActualDownload() {
-            // Guard: Human verify zaroori hai tabhi action proceed hogi
-            if (!isHumanVerified) return;
-
-            // ULTIMATE MULTI-CLICK GUARD: Agar pehle se ek click run ho raha hai, toh instant duplicate logic block karein
-            if (downloadFired) return;
-            downloadFired = true; // Block further execution on subsequent clicks
-
-            // Dynamic Action Button styling to prevent rapid multiple clicks physically
-            const btn = document.getElementById('directDownloadBtn');
-            btn.disabled = true;
-            btn.style.pointerEvents = 'none'; // CSS layout interaction level lock
-            btn.innerHTML = '<i class="fa-solid fa-spinner animate-spin"></i> Downloading Started...';
-
-            // --- SUBSCRIBE EVENT TRIGGER (ONLY FIRES ONCE!) ---
-            console.log("User initiated actual download. Firing 'Subscribe' event exactly once.");
-            
-            // Meta (Facebook) Pixel Subscribe Event
-            if (typeof fbq !== 'undefined') {
-                fbq('track', 'Subscribe', { 
-                    content_name: 'Raftaar APK Download', 
-                    value: 1.00, 
-                    currency: 'INR' 
-                });
-            }
-            
-            // Google Analytics / GTM Subscribe Event
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'subscribe', {
-                    'event_category': 'APK_Subscription',
-                    'event_label': 'Raftaar APK CloudFront Link'
-                });
-            }
-            // --- SUBSCRIBE EVENT TRIGGER END ---
-
-            // Start actual safe background download stream
-            window.location.href = REAL_APK_URL;
-
-            // Safe delay gap of 10 seconds jisme rapid tap blocking enabled rahegi
-            setTimeout(() => {
-                downloadFired = false;
-                btn.disabled = false;
-                btn.style.pointerEvents = 'auto'; // Touch re-enable karein
-                btn.innerHTML = '<i class="fa-solid fa-cloud-arrow-down text-xl"></i> Download APK Now';
-            }, 10000);
-        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
     </script>
 </body>
 </html>
